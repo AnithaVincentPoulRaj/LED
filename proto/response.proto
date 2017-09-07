@@ -1,0 +1,19 @@
+syntax = "proto3";
+message Response {
+    int32  code    = 1;
+    string message = 2;
+    ResponseData data    = 3;
+}
+message ResponseData {
+     sint64 userId = 1;
+     string mobileNumber = 2;
+     string userName     = 3;
+}
+message ControllerResponse {
+	int32 code = 1;
+}
+message DeivceResponse {
+	sint64 userId = 1;
+	string status = 2;
+	string type = 3;
+}

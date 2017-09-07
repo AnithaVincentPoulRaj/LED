@@ -1,0 +1,16 @@
+syntax = "proto3";
+message UserRegister {
+    string mobileNumber = 1;
+    string userName     = 2;
+    string password     = 3;
+    int32 deviceType    = 4;
+    string macAddress   = 5;
+}
+message ControllerRegister {
+ 	int32 pT = 1;
+ 	string mA = 2;
+ 	sint64 uID = 3;
+    string deviceName = 4;
+}
+
+
