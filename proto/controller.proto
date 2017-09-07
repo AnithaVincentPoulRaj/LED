@@ -1,9 +1,0 @@
-syntax = "proto3";
-message LEDStatusCon {
-  string mA = 1;
-  string ledOnOffStatus = 2;
-}
-message LEDStatus {
-	sint64 uID = 1;
-	string type = 2;
-}
