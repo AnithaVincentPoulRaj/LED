@@ -22,7 +22,7 @@ var options = {
     host: HOST,
     protocolId: 'MQIsdp',
     secureProtocol: 'TLv1_method',
-    clientId: 'ZK_MBTEAM_TEST_SIRAJU',
+    clientId: '1ZK_MBTEAM_TEST_SIRAJUU',
     protocolVersion: 3,
     protocol: 'mqtt',
     rejectUnauthorized : true,

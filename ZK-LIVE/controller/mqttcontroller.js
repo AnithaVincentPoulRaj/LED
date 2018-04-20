@@ -66,5 +66,6 @@ exports.hourDataProcessMqtt = function (identifier, origin, pData) {
     }
 };
 exports.publishClientController = function(topic, succMsg) {
+    commonLoggerSetup('PUB DATA SUCC: \n' + topic,LOGINFO);
     mqttclient.publish(topic, succMsg);
 };

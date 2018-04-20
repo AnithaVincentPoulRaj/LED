@@ -4,8 +4,8 @@ const zookeeper = require('node-zookeeper-client-async');
 global.nodePrefix = '/epms';
 var constant = require("./config/constant");
 var zkcontroller  = require('./controller/zkcontroller');
-global.zkclient = zookeeper.createAsyncClient(constant.ZK_SERVER_ROOT);
-
+//global.zkclient = zookeeper.createAsyncClient(constant.ZK_SERVER_ROOT);
+global.zkclient = zookeeper.createAsyncClient("192.168.2.95:2181");
 process.setMaxListeners(0);
 
 zkclient.once('connected', function (err) {

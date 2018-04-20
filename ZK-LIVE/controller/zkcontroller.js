@@ -336,3 +336,27 @@ exports.setProcessedHourlyDataToMqttClient = function (avgData) {
 	commonLoggerSetup('PUB HOUR DATA \n',LOGINFO);
 	controllerMqtt.hourDataProcessMqtt(constant.HOUR, constant.TCP, JSON.stringify(avgData));
 }
+
+/*
+ Function Name : getDataForSpecifiNode
+ Description   : 
+ Created on    : 
+ Updated on    :
+ Team          : MQTT Team 
+ Created by    : iExemplar Software India Pvt Ltd.
+ */
+exports.getDataForSpecifiNode = function (path, client) {
+	console.log(path);
+    return new Promise(function (resolve, reject) {
+        zkclient.getData(path, function (event) {
+           console.log('Got event: %s.', event); 
+       }, function (error, data, stat) {
+        if (error) {
+            console.log(error.stack);
+            return resolve(error);
+        }
+        console.log('Got data: %s', data.toString('utf8'));
+        return resolve(data.toString('utf8'));
+    });
+    });
+};

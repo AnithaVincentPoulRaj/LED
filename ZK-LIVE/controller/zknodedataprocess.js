@@ -118,11 +118,14 @@ function checknode(client,path,type) {
  Created by    : iExemplar Software India Pvt Ltd.
  */
 exports.createTypeCollectionNode = function (path,data,type) {
+	var buf = Buffer.from(JSON.stringify(data));
 	var nodeclient = zkclient.transaction();
+	console.log(buf);
 	if (type == 'YES') {
 		nodeclient.remove(path, -1);
 	}
-	nodeclient.create(path, new Buffer(data));
+	nodeclient.create(path);
+	nodeclient.setData(path, buf);
 	nodeclient.commit(function (error, results) {
 		if (error) {
 			commonLoggerSetup('ERROR DURING TYPECOLLETION NODE CREATE \n',LOGERROR);
